@@ -118,28 +118,28 @@ document.getElementById("tongSoXY").onclick = function () {
 };
 
 // bài tập in ra các số nguyên tố từ 1 đến số nhập vào
+function checksoNT(number){
+var check = true ;
+for(j=2;j<number;j++){
+  if(number % j == 0){
+    check =false;
+    break;
+  }
+}
+return check;
+}
 
-document.getElementById("ketQua6").onclick = function () {
-  var soNT = document.getElementById("nhapSNT").value * 1;
-  var kQ = [];
-  // khai báo giá trị thay đổi
-  // kiểm tra số nguyên tố
-  var dem = 0;
-  for (j = 2; j < Math.sqrt(nhapSNT); j++) {
-    if (nhapSNT % j == 0) {
-      dem = 0;
-    } else {
-      dem = 1;
+document.getElementById("ketQua6").onclick = function (number) {
+var soNT = document.getElementById("nhapSNT").value * 1;
+ var arr=[];
+ 
+ for( i=2;i<=soNT;i++){
+    if(checksoNT(i) == true){
+      arr.push(i)
     }
-    return dem;
-  }
-  console.log(dem)
-  // xác định điều kiện lặp
-  for (i = 1; i <= soNT; i++) {
-    // bước 3 xử lí
-    if (dem == 1) {
-      kQ.push(i);
-    }
-  }
-  document.getElementById("cacSNT").value = kQ;
+    console.log(arr)
+ }
+  
+ 
+  document.getElementById("cacSNT").value = arr;
 };
